@@ -6,7 +6,7 @@
 # @raycast.mode compact
 
 # Optional parameters:
-# @raycast.icon 🤖
+# @raycast.icon 🪵
 # @raycast.argument1 { "type": "text", "placeholder": "text" }
 # @raycast.argument2 { "type": "text", "placeholder": "source" }
 # @raycast.packageName furigana
@@ -17,7 +17,14 @@
 
 import webbrowser
 import sys
+from urllib.parse import urlencode
 
-url = f"logseq://x-callback-url/quickCapture?content={sys.argv[1]}&url={sys.argv[2]}"
+content = sys.argv[1]
+content_url = sys.argv[2]
+query_params = {'content': content, 'url': content_url, 'append': 'true', 'page': 'TODAY'}
+query_string = urlencode(query_params)
+
+
+url = f"logseq://x-callback-url/quickCapture?{query_string}"
 
 webbrowser.open(url, new=0)
