@@ -9,7 +9,7 @@
 # @raycast.icon 🪵
 # @raycast.argument1 { "type": "text", "placeholder": "text" }
 # @raycast.argument2 { "type": "text", "placeholder": "source" }
-# @raycast.packageName furigana
+# @raycast.packageName logseq-log
 
 # Documentation:
 # @raycast.description generate html ruby snippets
